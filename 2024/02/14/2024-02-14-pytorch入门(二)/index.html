@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>pytorch入门(二) - dataset,tensorboard | nop blog</title>
+  <meta name="keywords" content=" pytorch ">
+  <meta name="description" content="pytorch入门(二) - dataset,tensorboard | nop blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="本篇文章参考于PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】,非常感谢土堆老师的教学  学习资料链接链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1wGP1aZDA79ezQvqxEsGc7A?pwd&#x3D;y2e9 提取码: y2e9   注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptopk   datasetdataset datas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pytorch入门(二) - dataset,tensorboard">
+<meta property="og:url" content="http://example.com/2024/02/14/2024-02-14-pytorch%E5%85%A5%E9%97%A8(%E4%BA%8C)/index.html">
+<meta property="og:site_name" content="nop blog">
+<meta property="og:description" content="本篇文章参考于PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】,非常感谢土堆老师的教学  学习资料链接链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1wGP1aZDA79ezQvqxEsGc7A?pwd&#x3D;y2e9 提取码: y2e9   注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptopk   datasetdataset datas">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/bTzp6DXrxsvBPCU.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/hUWlond9AxOECF8.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/at4jluEw7MHh3DB.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/r9ejAgyXu3cNdTb.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/as9Cb4rk7gGWOKp.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/14/SmWIOCe4vo3s2aY.png">
+<meta property="article:published_time" content="2024-02-14T00:42:00.000Z">
+<meta property="article:modified_time" content="2024-02-18T12:59:53.790Z">
+<meta property="article:author" content="nop">
+<meta property="article:tag" content="pytorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/02/14/bTzp6DXrxsvBPCU.png">
+
+
+<link rel="icon" href="https://s2.loli.net/2024/02/18/WaBjZuhfvDeTKdS.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/sublime.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="https://s2.loli.net/2024/02/18/WaBjZuhfvDeTKdS.png"/>
+</a>
+<div class="author">
+    <span>nop</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/chenjunhannop"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(3)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="AI">
+            
+            AI
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="3">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pytorch</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 AI "
+           href="/2024/02/14/2024-02-14-pytorc%E5%85%A5%E9%97%A8(%E4%B8%89)/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="pytorch入门(三) - transform,dataloader">pytorch入门(三) - transform,dataloader</span>
+            <span class="post-date" title="2024-02-14 08:42:00">2024/02/14</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 AI "
+           href="/2024/02/14/2024-02-14-pytorch%E5%85%A5%E9%97%A8(%E4%BA%8C)/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="pytorch入门(二) - dataset,tensorboard">pytorch入门(二) - dataset,tensorboard</span>
+            <span class="post-date" title="2024-02-14 08:42:00">2024/02/14</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 AI "
+           href="/2024/02/14/2024-02-14-pytorch%E5%85%A5%E9%97%A8(%E4%B8%80)/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="pytorch入门(一) - pytorch配置与环境安装">pytorch入门(一) - pytorch配置与环境安装</span>
+            <span class="post-date" title="2024-02-14 08:42:00">2024/02/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-2024-02-14-pytorch入门(二)" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">pytorch入门(二) - dataset,tensorboard</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="AI">AI</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">pytorch</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-02-18 20:59:53'>2024-02-14 08:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dataset"><span class="toc-text">dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset-1"><span class="toc-text">dataset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset%E5%AE%9E%E6%88%98"><span class="toc-text">dataset实战</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tensorboard"><span class="toc-text">Tensorboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorboard-1"><span class="toc-text">Tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85tensorboard"><span class="toc-text">安装tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SummaryWriter%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">SummaryWriter类的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-scalar-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_scalar()的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80tensorboard"><span class="toc-text">打开tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-image-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_image()的使用</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>本篇文章参考于<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hE411t7RN">PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】</a>,非常感谢土堆老师的教学</p>
+</li>
+<li><p>学习资料链接链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9">https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9</a> 提取码: y2e9 </p>
+</li>
+<li><p>注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptopk</p>
+</li>
+</ul>
+<h1 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h1><h2 id="dataset-1"><a href="#dataset-1" class="headerlink" title="dataset"></a>dataset</h2><ul>
+<li>dataset -&gt; 提供一种方式去获取数据及其label如图:</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/bTzp6DXrxsvBPCU.png" alt="image-20240214144301297"></p>
+<ul>
+<li>dataset主要实现的功能有两个:<ol>
+<li>获取每一个数据及其label</li>
+<li>获取数据的总数 -&gt; 只有知道了数据的总数,才能知道在训练的时候我们要训练多少次才能对数据进行反复迭代</li>
+</ol>
+</li>
+<li>使用pycharm导入<code>from torch.utils.data import Dataset</code> 我们可以进入看见dataset的官方文档解释</li>
+</ul>
+<pre><code class="python">class Dataset(Generic[T_co]):
+    r&quot;&quot;&quot;An abstract class representing a :class:`Dataset`.
+
+    All datasets that represent a map from keys to data samples should subclass
+    it. All subclasses should overwrite :meth:`__getitem__`, supporting fetching a
+    data sample for a given key. Subclasses could also optionally overwrite
+    :meth:`__len__`, which is expected to return the size of the dataset by many
+    :class:`~torch.utils.data.Sampler` implementations and the default options
+    of :class:`~torch.utils.data.DataLoader`.
+
+    .. note::
+      :class:`~torch.utils.data.DataLoader` by default constructs a index
+      sampler that yields integral indices.  To make it work with a map-style
+      dataset with non-integral indices/keys, a custom sampler must be provided.
+    &quot;&quot;&quot;
+    functions: Dict[str, Callable] = &#123;&#125;
+
+    def __getitem__(self, index) -&gt; T_co:
+        raise NotImplementedError
+
+    def __add__(self, other: &#39;Dataset[T_co]&#39;) -&gt; &#39;ConcatDataset[T_co]&#39;:
+        return ConcatDataset([self, other])
+
+    # No `def __len__(self)` default?
+    # See NOTE [ Lack of Default `__len__` in Python Abstract Base Classes ]
+    # in pytorch/torch/utils/data/sampler.py
+
+    def __getattr__(self, attribute_name):
+        if attribute_name in Dataset.functions:
+            function = functools.partial(Dataset.functions[attribute_name], self)
+            return function
+        else:
+            raise AttributeError
+</code></pre>
+<blockquote>
+<ul>
+<li>所有的数据集都应该去继承这个类,</li>
+<li>所有的子类,都应该去重写<code>__getitem__</code> <ul>
+<li>这个方法主要是获取每一个数据及其label</li>
+</ul>
+</li>
+<li>我们同样可以选择去重写方法<code>__len__</code><ul>
+<li>这个方法会返回数据集的长度</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="dataset实战"><a href="#dataset实战" class="headerlink" title="dataset实战"></a>dataset实战</h2><ul>
+<li>本次实操将用到资料中的数据集</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/hUWlond9AxOECF8.png" alt="image-20240214145848353"></p>
+<ul>
+<li>文件夹分为train和val,点开后里面分别有ant和bee -&gt; 在这之中的ant和bee就是它的label</li>
+<li>打开pycharm输入代码如下所示</li>
+</ul>
+<pre><code class="python">import os
+
+from PIL.Image import Image
+from torch.utils.data import Dataset
+
+
+class NewClass(Dataset):
+
+    def __init__(self, root_dir, label_dir):
+        self.root_dir = root_dir  # 将root_dir包装为这个类的全局变量 root_dir为数据集的根路径
+        self.label_dir = label_dir  # 将label_dir包装为这个类的全局变量
+        self.path = os.path.join(root_dir, label_dir)  # 拼接路径
+        self.img_path = os.listdir(self.path)  # 获取这个路径下所有的地址
+
+    def __getitem__(self, idx):
+        img_name = self.img_path[idx]  # 获取文件名
+        img_item_path = os.path.join(self.root_dir, self.label_dir, img_name)  # 获取每个图片的路径
+        img = Image.open(img_item_path)  # 数据
+        label = self.label_dir  # label
+        return img, label
+
+    def __len__(self):
+        return len(self.img_path)  # 数据的长度
+
+
+root_dir = &quot;dataset/train&quot;  # 数据集的相对路径
+ants_label_dir = &quot;ants&quot;
+ants_dataset = NewClass(root_dir=root_dir, label_dir=ants_label_dir)
+</code></pre>
+<ul>
+<li>上述代码中我们通过重写dataset, 获取到了ants数据集的信息如果想查询数据集中详细的数据的话,可以通过以下代码查询:</li>
+</ul>
+<pre><code class="python">img, label = ants_dataset[0]
+img.show()
+</code></pre>
+<ul>
+<li>还可以通过Ctrl+Enter组合键,查询python右边控制台的变量</li>
+</ul>
+<h1 id="Tensorboard"><a href="#Tensorboard" class="headerlink" title="Tensorboard"></a>Tensorboard</h1><h2 id="Tensorboard-1"><a href="#Tensorboard-1" class="headerlink" title="Tensorboard"></a>Tensorboard</h2><ul>
+<li>可以通过图表看到,在训练的过程中,数据的loss是如何变化的<ul>
+<li>loss: 查看数据是否是以我们期望的方向进行训练的参数</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/at4jluEw7MHh3DB.png" alt="image-20240214155827752"></p>
+<ul>
+<li>可以看到每一个input中,我们数据的形状,声音等等</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/r9ejAgyXu3cNdTb.png" alt="image-20240214155810875"></p>
+<h2 id="安装tensorboard"><a href="#安装tensorboard" class="headerlink" title="安装tensorboard"></a>安装tensorboard</h2><pre><code class="shell">pip install tensorboard
+</code></pre>
+<ul>
+<li><strong>注</strong>:安装前请注意anaconda的环境</li>
+</ul>
+<h2 id="SummaryWriter类的使用"><a href="#SummaryWriter类的使用" class="headerlink" title="SummaryWriter类的使用"></a>SummaryWriter类的使用</h2><ul>
+<li>我们通过<code>from torch.utils.tensorboard import SummaryWriter</code> 查看SummaryWriter的官方文档如下</li>
+</ul>
+<pre><code class="python">class SummaryWriter(object):
+    &quot;&quot;&quot;Writes entries directly to event files in the log_dir to be
+    consumed by TensorBoard.
+
+    The `SummaryWriter` class provides a high-level API to create an event file
+    in a given directory and add summaries and events to it. The class updates the
+    file contents asynchronously. This allows a training program to call methods
+    to add data to the file directly from the training loop, without slowing down
+    training.
+    &quot;&quot;&quot;
+
+    def __init__(self, log_dir=None, comment=&#39;&#39;, purge_step=None, max_queue=10,
+                 flush_secs=120, filename_suffix=&#39;&#39;):
+        &quot;&quot;&quot;Creates a `SummaryWriter` that will write out events and summaries
+        to the event file.
+
+        Args:
+            log_dir (string): Save directory location. Default is
+              runs/**CURRENT_DATETIME_HOSTNAME**, which changes after each run.
+              Use hierarchical folder structure to compare
+              between runs easily. e.g. pass in &#39;runs/exp1&#39;, &#39;runs/exp2&#39;, etc.
+              for each new experiment to compare across them.
+            comment (string): Comment log_dir suffix appended to the default
+              ``log_dir``. If ``log_dir`` is assigned, this argument has no effect.
+            purge_step (int):
+              When logging crashes at step :math:`T+X` and restarts at step :math:`T`,
+              any events whose global_step larger or equal to :math:`T` will be
+              purged and hidden from TensorBoard.
+              Note that crashed and resumed experiments should have the same ``log_dir``.
+            max_queue (int): Size of the queue for pending events and
+              summaries before one of the &#39;add&#39; calls forces a flush to disk.
+              Default is ten items.
+            flush_secs (int): How often, in seconds, to flush the
+              pending events and summaries to disk. Default is every two minutes.
+            filename_suffix (string): Suffix added to all event filenames in
+              the log_dir directory. More details on filename construction in
+              tensorboard.summary.writer.event_file_writer.EventFileWriter.
+
+        Examples::
+
+            from torch.utils.tensorboard import SummaryWriter
+
+            # create a summary writer with automatically generated folder name.
+            writer = SummaryWriter()
+            # folder location: runs/May04_22-14-54_s-MacBook-Pro.local/
+
+            # create a summary writer using the specified folder name.
+            writer = SummaryWriter(&quot;my_experiment&quot;)
+            # folder location: my_experiment
+
+            # create a summary writer with comment appended.
+            writer = SummaryWriter(comment=&quot;LR_0.1_BATCH_16&quot;)
+            # folder location: runs/May04_22-14-54_s-MacBook-Pro.localLR_0.1_BATCH_16/
+
+        &quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>直接使用SummaryWriter的话默认保存路径为<code>/runs/本机信息</code>我们也可以在括号中指定文件生成的路径,这些文件保存的是自己配置的训练数据的信息,生成后可以用tensorboard查看</li>
+</ul>
+<h2 id="add-scalar-的使用"><a href="#add-scalar-的使用" class="headerlink" title="add_scalar()的使用"></a>add_scalar()的使用</h2><ul>
+<li>add_scalar官方文档如下</li>
+</ul>
+<pre><code class="python">    def add_scalar(
+        self,
+        tag,
+        scalar_value,
+        global_step=None,
+        walltime=None,
+        new_style=False,
+        double_precision=False,
+    ):
+        &quot;&quot;&quot;Add scalar data to summary.
+
+        Args:
+            tag (string): Data identifier
+            scalar_value (float or string/blobname): Value to save
+            global_step (int): Global step value to record
+            walltime (float): Optional override default walltime (time.time())
+              with seconds after epoch of event
+            new_style (boolean): Whether to use new style (tensor field) or old
+              style (simple_value field). New style could lead to faster data loading.
+        Examples::
+
+            from torch.utils.tensorboard import SummaryWriter
+            writer = SummaryWriter()
+            x = range(100)
+            for i in x:
+                writer.add_scalar(&#39;y=2x&#39;, i * 2, i)
+            writer.close()
+
+        Expected result:
+
+        .. image:: _static/img/tensorboard/add_scalar.png
+           :scale: 50 %
+
+        &quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>tag 类似图表的标题</li>
+<li>scalar_value 需要保存的数值</li>
+<li>global_step 当前执行的步数</li>
+<li>add_scalar代码示例如下:</li>
+</ul>
+<pre><code class="python">from torch.utils.tensorboard import SummaryWriter
+
+writer = SummaryWriter(&quot;logs&quot;)  # 将文件保存在logs文件夹下
+
+for i in range(100):
+    writer.add_scalar(tag=&quot;y=x&quot;, scalar_value=i, global_step=i)
+
+writer.close()
+</code></pre>
+<h2 id="打开tensorboard"><a href="#打开tensorboard" class="headerlink" title="打开tensorboard"></a>打开tensorboard</h2><pre><code class="shell">tensorboard --logdir=logs --port=6007
+</code></pre>
+<pre><code class="shell">tensorboard --logdir=#&#123;事件文件所在文件夹名&#125; --port=#&#123;端口&#125;
+</code></pre>
+<ul>
+<li>打开<a target="_blank" rel="noopener" href="http://localhost:6007/#timeseries">TensorBoard</a>可以看到我们刚才生成的数据</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/as9Cb4rk7gGWOKp.png" alt="image-20240214163300365"></p>
+<h2 id="add-image-的使用"><a href="#add-image-的使用" class="headerlink" title="add_image()的使用"></a>add_image()的使用</h2><ul>
+<li>add_image()官方文档如下:</li>
+</ul>
+<pre><code class="python">def add_image(self, tag, img_tensor, global_step=None, walltime=None, dataformats=&#39;CHW&#39;):
+    &quot;&quot;&quot;Add image data to summary.
+
+    Note that this requires the ``pillow`` package.
+
+    Args:
+        tag (string): Data identifier
+        img_tensor (torch.Tensor, numpy.array, or string/blobname): Image data
+        global_step (int): Global step value to record
+        walltime (float): Optional override default walltime (time.time())
+          seconds after epoch of event
+    Shape:
+        img_tensor: Default is :math:`(3, H, W)`. You can use ``torchvision.utils.make_grid()`` to
+        convert a batch of tensor into 3xHxW format or call ``add_images`` and let us do the job.
+        Tensor with :math:`(1, H, W)`, :math:`(H, W)`, :math:`(H, W, 3)` is also suitable as long as
+        corresponding ``dataformats`` argument is passed, e.g. ``CHW``, ``HWC``, ``HW``.
+
+    Examples::
+
+        from torch.utils.tensorboard import SummaryWriter
+        import numpy as np
+        img = np.zeros((3, 100, 100))
+        img[0] = np.arange(0, 10000).reshape(100, 100) / 10000
+        img[1] = 1 - np.arange(0, 10000).reshape(100, 100) / 10000
+
+        img_HWC = np.zeros((100, 100, 3))
+        img_HWC[:, :, 0] = np.arange(0, 10000).reshape(100, 100) / 10000
+        img_HWC[:, :, 1] = 1 - np.arange(0, 10000).reshape(100, 100) / 10000
+
+        writer = SummaryWriter()
+        writer.add_image(&#39;my_image&#39;, img, 0)
+
+        # If you have non-default dimension setting, set the dataformats argument.
+        writer.add_image(&#39;my_image_HWC&#39;, img_HWC, 0, dataformats=&#39;HWC&#39;)
+        writer.close()
+
+    Expected result:
+
+    .. image:: _static/img/tensorboard/add_image.png
+       :scale: 50 %
+
+    &quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>tag 标题</li>
+<li>img_tensor 图像 -&gt;要求数据类型(torch.Tensor, numpy.array, or string&#x2F;blobname)</li>
+<li>global_step 图像进行到的步数</li>
+<li>dataformats</li>
+</ul>
+<blockquote>
+<p>dataformats中的C &#x3D;&#x3D; Channel 通道,H &#x3D;&#x3D; Height 高度,W &#x3D;&#x3D; Width 宽度</p>
+</blockquote>
+<ul>
+<li>add_image()示例代码如下</li>
+</ul>
+<pre><code class="python">import numpy as np
+from PIL import Image
+from torch.utils.tensorboard import SummaryWriter
+
+writer = SummaryWriter(&quot;logs&quot;)  # 将文件保存在logs文件夹下
+image_path = &quot;dataset/train/ants/0013035.jpg&quot;  # 图片的地址
+img_PIL = Image.open(image_path)
+img_array = np.array(img_PIL)  # 将图片的格式转换为numpy类型的数据 因为add_image不支持PIL数据类型
+writer.add_image(tag=&quot;test&quot;, img_tensor=img_array, global_step=1, dataformats=&quot;HWC&quot;)
+# dataformats中的C == Channel 通道,H == Height 高度,W == Width 宽度
+# print(img_array.shap)可以查看它的格式 一般为3的就是通道
+writer.close()
+</code></pre>
+<ul>
+<li>打开tensorboard可以看到我们刚才加入的图片</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/14/SmWIOCe4vo3s2aY.png" alt="image-20240214165935740"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 nop
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
