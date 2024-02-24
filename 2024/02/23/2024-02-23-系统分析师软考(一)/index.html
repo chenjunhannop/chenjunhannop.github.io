@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>pytorch入门(一) - pytorch配置与环境安装 | nop blog</title>
-  <meta name="keywords" content=" pytorch ">
-  <meta name="description" content="pytorch入门(一) - pytorch配置与环境安装 | nop blog">
+  <title>2024-02-23-系统分析师软考(一) | nop blog</title>
+  <meta name="keywords" content=" 系统分析师 ">
+  <meta name="description" content="2024-02-23-系统分析师软考(一) | nop blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="考试介绍及备考攻略系统分析师相关情况 考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]  总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目三总时长">
 <meta property="og:type" content="article">
@@ -270,9 +270,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-2024-02-14-pytorch入门(一)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-2024-02-23-系统分析师软考(一)" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">pytorch入门(一) - pytorch配置与环境安装</h1>
+        <h1 class="article-title">2024-02-23-系统分析师软考(一)</h1>
     
     <div class="article-meta">
         
@@ -284,7 +284,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="AI">AI</a>
+            <a  data-rel="软考">软考</a>
             
         </span>
         
@@ -292,14 +292,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">pytorch</a>
+            <a class="color1">系统分析师</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-02-18 20:59:53'>2024-02-14 08:42</time>
+            发布时间 : <time class="date" title='最后更新: 2024-02-24 18:10:11'>2024-02-23 17:42</time>
         
     </div>
     <div class="article-meta">
@@ -321,7 +321,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85anaconda"><span class="toc-text">安装anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85anaconda-1"><span class="toc-text">安装anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">anaconda环境配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%BE%E5%8D%A1%E9%85%8D%E7%BD%AE"><span class="toc-text">显卡配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">Nvidia驱动安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pytorch"><span class="toc-text">安装pytorch</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%A4%87%E8%80%83%E6%94%BB%E7%95%A5"><span class="toc-text">考试介绍及备考攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E7%9B%B8%E5%85%B3%E6%83%85%E5%86%B5"><span class="toc-text">系统分析师相关情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="toc-text">软件开发方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="toc-text">其它软件开发方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">计算机组成与体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="toc-text">内容提要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E5%8F%8A%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-text">编码及浮点数运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flynn%E5%88%86%E7%B1%BB%E6%B3%95-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB"><span class="toc-text">Flynn分类法 - 计算机体系结构分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CISC%E4%B8%8ERISC"><span class="toc-text">CISC与RISC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="toc-text">流水线技术</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -337,80 +337,150 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>本篇文章参考于<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hE411t7RN">PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】</a>,非常感谢土堆老师的教学</p>
-</li>
-<li><p>学习资料链接链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9">https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9</a> 提取码: y2e9 </p>
-</li>
-<li><p>注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptop</p>
-</li>
+        <h1 id="考试介绍及备考攻略"><a href="#考试介绍及备考攻略" class="headerlink" title="考试介绍及备考攻略"></a>考试介绍及备考攻略</h1><h2 id="系统分析师相关情况"><a href="#系统分析师相关情况" class="headerlink" title="系统分析师相关情况"></a>系统分析师相关情况</h2><ul>
+<li>考试形式:机考</li>
+<li>考试科目:</li>
 </ul>
-<h1 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h1><h2 id="安装anaconda-1"><a href="#安装anaconda-1" class="headerlink" title="安装anaconda"></a>安装anaconda</h2><ul>
-<li>进入anaconda历史版本页面<a target="_blank" rel="noopener" href="https://repo.anaconda.com/">Anaconda Installers and Packages</a></li>
-<li>点击View All installer<img src="https://s2.loli.net/2024/02/14/Lg3ctxnBhdPRTH9.png" alt="image-20240214092042981"></li>
-<li>本篇文章使用的是<a target="_blank" rel="noopener" href="https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Windows-x86_64.exe">Anaconda3-2023.09-0-Windows-x86_64.exe</a><img src="https://s2.loli.net/2024/02/14/Mlmgktv6hfBeVpz.png" alt="image-20240214092502097"></li>
-<li>下载安装包后直接安装即可,安装路径可以选择自己喜欢的,本篇文章选择的是默认安装路径<ul>
-<li><strong>注</strong>: 在安装过程中如果要求你安装VScode,请跳过安装</li>
-</ul>
-</li>
-<li>安装完成后打开anaconda prompt验证是否安装成功:如果打开后看见了左边的括号 <code>(base)</code> 则代表安装成功<img src="https://s2.loli.net/2024/02/14/WQSUJiFK7rDcHOI.png" alt="image-20240214093104453"></li>
-</ul>
-<h2 id="anaconda环境配置"><a href="#anaconda环境配置" class="headerlink" title="anaconda环境配置"></a>anaconda环境配置</h2><ul>
-<li><blockquote>
-<p>如果你想使用anaconda管理python的多个环境,那么最好的方法就是创建一个新的conda环境,</p>
+<blockquote>
+<p>科目一 : 综合知识 [总分: 75分]</p>
 <ul>
-<li>conda的环境我们可以理解为一个又一个集装箱, 比如base环境是一个箱子,里面装满了苹果,pytorch是一个箱子,里面装满了梨子. 这样做的好处是把每个环境独立起来互不影响,当你想吃苹果的话直接进入base环境,想吃梨子就进入pytorch环境.不会导致把苹果和梨子装在一起拿错或者冲突的情况.</li>
+<li><p>总时长150分钟(8:30 - 11:00) </p>
+</li>
+<li><p>客观题: 75空单选</p>
+</li>
 </ul>
+<p>科目二:案例分析[总分:75分]</p>
+<ul>
+<li>1道必答题+4选2</li>
+<li>选答只记录做了的前两道题</li>
+</ul>
+<p>科目三:论文写作[总分:75分]</p>
+<ul>
+<li>论问题:四选一</li>
+<li>论文要求字数 2000  - 2500 字</li>
+</ul>
+<p><strong>注</strong>: 科目二, 科目三总时长210分钟(14:30  - 18:00) 考试经过了90分钟之后,科目二会自动交卷</p>
 </blockquote>
+<h2 id="软件开发方法"><a href="#软件开发方法" class="headerlink" title="软件开发方法"></a>软件开发方法</h2><ul>
+<li><p>结构化法 - c语言为主</p>
+<ul>
+<li><strong>自顶向下</strong>, 逐步分解求精</li>
+<li>严格分阶段,阶段产出标准化应变能力差</li>
+</ul>
 </li>
-<li><p>打开anaconda prompt,输入命令</p>
+<li><p>面向对象方法 - c++, java …</p>
+<ul>
+<li><strong>自底向上</strong></li>
+<li>阶段界限不明</li>
+<li>应变能力更强,更符合人们的思维习惯</li>
+</ul>
+</li>
+<li><p>面向服务的方法 - 面向对象,但是封装的层级更高</p>
+<ul>
+<li>粗粒度,松耦合</li>
+<li><strong>标准化和构建化</strong></li>
+<li>抽象级别<ul>
+<li>操作 - 低级</li>
+<li>服务 - 中级</li>
+<li>业务流程 - 高级</li>
+</ul>
 </li>
 </ul>
-<pre><code class="shell">conda create -n pytorch python=3.6
-</code></pre>
-<pre><code class="shell">conda create -n #&#123;环境名称&#125; #&#123;包名&#125;
-# -n name 名称
+</li>
+<li><p>原型法:[需求阶段]</p>
+<ul>
+<li>原型法独立于其它三个阶段,是独立的方法</li>
+<li><strong>针对需求不明确</strong></li>
+<li>按功能:<ul>
+<li>水平原型(界面)</li>
+<li>垂直原型(复杂算法)</li>
+</ul>
+</li>
+<li>按最终结果:<ul>
+<li>抛弃式原型</li>
+<li>演化式原型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="其它软件开发方法"><a href="#其它软件开发方法" class="headerlink" title="其它软件开发方法"></a>其它软件开发方法</h3><ul>
+<li>形式化方法 - 形式化是以数学模型为基础的</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png" alt="image-20240224104104931"></p>
+<ul>
+<li>统一过程方法[UP]</li>
+<li>敏捷方法</li>
+</ul>
+<h1 id="计算机组成与体系结构"><a href="#计算机组成与体系结构" class="headerlink" title="计算机组成与体系结构"></a>计算机组成与体系结构</h1><h2 id="内容提要"><a href="#内容提要" class="headerlink" title="内容提要"></a>内容提要</h2><ul>
+<li>知识点重要程度如下图所示:</li>
+</ul>
+<img src="https://s2.loli.net/2024/02/24/z4TnZKlodY1u5Fy.png" alt="image-20240224104918679" style="zoom: 33%;" />
+
+<h2 id="编码及浮点数运算"><a href="#编码及浮点数运算" class="headerlink" title="编码及浮点数运算"></a>编码及浮点数运算</h2><ul>
+<li><p>浮点数表示<a href="%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E6%89%80%E6%9C%89%E7%9A%84%E5%9F%BA%E6%95%B0%E5%9B%BA%E5%AE%9A%E4%B8%BA2,%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%9C%89%E7%82%B9%E7%B1%BB%E4%BC%BC%E4%BA%8E%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95">^1</a></p>
+<ul>
+<li>$$<br>N &#x3D; 尾数 * 基数^{指数(阶码)}<br>$$</li>
+</ul>
+</li>
+<li><p>运算过程:</p>
+</li>
+<li><p>对阶<a href="%E4%BD%BF%E8%A6%81%E8%AE%A1%E7%AE%97%E7%9A%84%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E9%98%B6%E7%A0%81%E7%9B%B8%E7%AD%89">^2</a> &gt; 尾数计算<a href="%E4%B8%80%E6%97%A6%E4%B8%A4%E4%B8%AA%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E6%8C%87%E6%95%B0%E5%AF%B9%E9%BD%90,%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%AF%B9%E4%B8%A4%E4%B8%AA%E5%B0%BE%E6%95%B0(%E4%B9%9F%E7%A7%B0%E4%B8%BA%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97)%E6%89%A7%E8%A1%8C%E5%8A%A0%E3%80%81%E5%87%8F%E3%80%81%E4%B9%98%E6%88%96%E9%99%A4%E7%AD%89%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E3%80%82%E6%A0%B9%E6%8D%AE%E8%BF%90%E7%AE%97%E7%9A%84%E7%B1%BB%E5%9E%8B,%E5%AF%B9%E5%BA%94%E7%9A%84%E8%A7%84%E5%88%99%E4%BC%9A%E5%BA%94%E7%94%A8%E4%BA%8E%E5%B0%BE%E6%95%B0%E3%80%82">^3</a> &gt; 结果格式化<a href="%E4%BA%86%E8%A7%A3%E5%88%B0%E6%9C%89%E8%BF%99%E4%B8%AA%E8%BF%87%E7%A8%8B%E5%B0%B1%E8%A1%8C%E4%BA%86,%E8%BF%99%E9%87%8C%E4%B8%8D%E5%81%9A%E8%80%83%E5%AF%9F">^4</a></p>
+</li>
+<li><p>特点:</p>
+<ol>
+<li>一般尾数用补码[^5],阶码[^6]用移码[^7]</li>
+<li>阶码的位数决定数的表示范围, 位数越多范围越大</li>
+<li>尾数的位数决定书的有效精度,位数越多精度越高</li>
+<li>对阶时,小数向大数看齐</li>
+<li>对阶是通过较小数的尾数右移实现的</li>
+</ol>
+</li>
+</ul>
+<h2 id="Flynn分类法-计算机体系结构分类"><a href="#Flynn分类法-计算机体系结构分类" class="headerlink" title="Flynn分类法 - 计算机体系结构分类"></a>Flynn分类法 - 计算机体系结构分类</h2><p><img src="https://s2.loli.net/2024/02/24/Nu2zgxnMP9DLrj6.png" alt="image-20240224155700240"></p>
+<pre><code class="text">S: Single 		单个   
+M: Multiple		多个
+I: Instruction  指令
+D: Data			数据
 </code></pre>
 <ul>
-<li>激活conda环境</li>
+<li><strong>注</strong>: 注意区分大规模并行处理器MPP为MIMD,而并行处理机为SIMD</li>
 </ul>
-<pre><code class="shell">conda activate pytorch
-</code></pre>
-<pre><code class="shell">conda activate #&#123;环境名&#125;
-</code></pre>
+<h2 id="CISC与RISC"><a href="#CISC与RISC" class="headerlink" title="CISC与RISC"></a>CISC与RISC</h2><table>
+<thead>
+<tr>
+<th>指令系统类型</th>
+<th align="left">指令</th>
+<th>寻址方式</th>
+<th>实现方式</th>
+<th>其它</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CISC(复杂)</td>
+<td align="left">数量多,使用频率差别大,可变长格式</td>
+<td>支持多种</td>
+<td>微程序控制技术(微码)<a href="%E5%8F%AF%E4%BB%A5%E7%90%86%E8%A7%A3%E4%B8%BA%E5%BA%95%E5%B1%82%E6%9C%BA%E6%A2%B0%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E4%B8%80%E7%A7%8D">^8</a></td>
+<td>研制周期长</td>
+</tr>
+<tr>
+<td>RISC(精简)</td>
+<td align="left">数量少,使用频率接近 ,定长格式,大部分为单周期指令,操作寄存器,只有Load&#x2F;Store操作内存</td>
+<td>支持方式少</td>
+<td>增加了通用寄存器;硬布线逻辑控制为主;适合采用流水线</td>
+<td>优化编译,有效支持高级语言</td>
+</tr>
+</tbody></table>
 <ul>
-<li>查看当前环境安装的包</li>
+<li>复杂指令计算机(CISC, Complex Instruction Set Computers)<a href="%E4%B8%BB%E8%A6%81%E5%BA%94%E7%94%A8%E4%B8%8Ex86%E8%AE%A1%E7%AE%97%E6%9C%BA">^9</a></li>
+<li>精简指令计算机(RISC, Reduced Instruction Set Computers)</li>
 </ul>
-<pre><code class="shell">pip list
-</code></pre>
-<h1 id="显卡配置"><a href="#显卡配置" class="headerlink" title="显卡配置"></a>显卡配置</h1><p><strong>注</strong>: 是否有显卡对于学习anaconda并不重要,显卡在pytorch的学习过程中起到的是训练加速的作用,本文演示的是Nvidia显卡配置,如果使用的是核 显或者AMD显卡这里可以跳过</p>
-<h2 id="Nvidia驱动安装"><a href="#Nvidia驱动安装" class="headerlink" title="Nvidia驱动安装"></a>Nvidia驱动安装</h2><ul>
-<li>访问英伟达官网<a target="_blank" rel="noopener" href="https://www.nvidia.cn/geforce/drivers/">NVIDIA GeForce 驱动程序 - N 卡驱动 | NVIDIA</a>并根据自己的显卡类型搜索驱动程序.我这是使用的是3070ti笔记本显卡选择如图:<img src="https://s2.loli.net/2024/02/14/kUVFx3yBKL4mrRY.png" alt="image-20240214093714581"></li>
-<li>点击开始搜索后下拉选择任意驱动版本下载即可(建议可以选择时间稍微靠后点的驱动)</li>
+<h2 id="流水线技术"><a href="#流水线技术" class="headerlink" title="流水线技术"></a>流水线技术</h2><ul>
+<li>相关参数计算: 流水线执行时间计算, 流水线吞吐率, 流水线加速比</li>
+<li>流水线是指在程序执行时多条指令重叠进行操作的一种<strong>准并行处理实现技术</strong>. 各种部件同时处理是针对不同指令而言的,它们可同时为多条指令的不同部分进行工作,以提高部件的利用率和指令的平均执行速度</li>
 </ul>
-<h1 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h1><ul>
-<li><p>进入pytorch官网<a target="_blank" rel="noopener" href="https://pytorch.org/">PyTorch</a></p>
-</li>
-<li><p>按照以下配置进行选择:<img src="https://s2.loli.net/2024/02/14/aVZlRBrLqQtEM23.png" alt="image-20240214100304246"></p>
-<ul>
-<li><strong>注</strong>:本篇文章使用的是cuda11.8,如果在你学习的时候pytorch官网版本已经更新到之后了,请去NVIDIA官网查看适合你显卡型号的CUDA并选择类似于上图的配置<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit">CUDA Toolkit - Free Tools and Training | NVIDIA Developer</a></li>
-<li><strong>注</strong>:如果你的显卡为AMD或者CPU.CUDA那一栏选择CPU即可</li>
-</ul>
-</li>
-<li><p>选择完毕后打开anaconda prompt激活pytorch环境运行pytorch官网给出的命令即可:<img src="https://s2.loli.net/2024/02/14/PoNcMGavn65TbKR.png" alt="image-20240214101321299"></p>
-</li>
-<li><p>检验安装</p>
-<ul>
-<li>输入python进入python编译环境:<img src="https://s2.loli.net/2024/02/14/dmtMKeZR15HWnCb.png" alt="image-20240214102229573"></li>
-</ul>
-<pre><code class="python">import torch
-torch.cuda.is_available()
-</code></pre>
-<ul>
-<li>如果NVIDA显卡用户则会返回True,AMD和CPU用户会返回False</li>
-</ul>
-</li>
-</ul>
+<p><img src="https://s2.loli.net/2024/02/24/6hmCW1NJK8rPs3U.png" alt="image-20240224164115575"></p>
+<p>[^5]: 补码(Two’s Complement): 补码主要用于表示有符号整数。对于一个N位二进制数,如果它是正数,那它本身就是该数的补码表示;如果它是负数,那么它的补码是其绝对值的反码加1。使用补码可以使加法和减法运算同构。<br>[^6]: 在这指的是指数<br>[^7]: 移码(Excess-K Code): 移码也是表示浮点数指数部分的一种码制,但与阶码不同。移码是将真实指数值加上一个常数K(通常为2^(n-1)-1,其中n是指数位数)。这种编码方式的优点是,移码的最高有效位总是1,便于判断指数的正负号。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论 </span>
