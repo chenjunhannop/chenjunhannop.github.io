@@ -6,19 +6,20 @@
   <meta name="keywords" content=" pytorch ">
   <meta name="description" content="pytorch入门(二) - dataset,tensorboard | nop blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="考试介绍及备考攻略系统分析师相关情况 考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]  总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目三总时长">
+<meta name="description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2024-02-23-系统分析师软考(一)">
 <meta property="og:url" content="http://example.com/2024/02/23/2024-02-23-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="nop blog">
-<meta property="og:description" content="考试介绍及备考攻略系统分析师相关情况 考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]  总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目三总时长">
+<meta property="og:description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png">
 <meta property="og:image" content="https://s2.loli.net/2024/02/24/z4TnZKlodY1u5Fy.png">
 <meta property="og:image" content="https://s2.loli.net/2024/02/24/Nu2zgxnMP9DLrj6.png">
 <meta property="og:image" content="https://s2.loli.net/2024/02/24/6hmCW1NJK8rPs3U.png">
+<meta property="og:image" content="c:/Users/chenJunHan/AppData/Roaming/Typora/typora-user-images/image-20240225173227184.png">
 <meta property="article:published_time" content="2024-02-23T09:42:00.000Z">
-<meta property="article:modified_time" content="2024-02-24T10:10:11.864Z">
+<meta property="article:modified_time" content="2024-02-25T10:28:34.285Z">
 <meta property="article:author" content="nop">
 <meta property="article:tag" content="系统分析师">
 <meta name="twitter:card" content="summary">
@@ -321,7 +322,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dataset"><span class="toc-text">dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset-1"><span class="toc-text">dataset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset%E5%AE%9E%E6%88%98"><span class="toc-text">dataset实战</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tensorboard"><span class="toc-text">Tensorboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorboard-1"><span class="toc-text">Tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85tensorboard"><span class="toc-text">安装tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SummaryWriter%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">SummaryWriter类的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-scalar-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_scalar()的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80tensorboard"><span class="toc-text">打开tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-image-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_image()的使用</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset"><span class="toc-text">dataset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dataset%E5%AE%9E%E6%88%98"><span class="toc-text">dataset实战</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Tensorboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorboard"><span class="toc-text">Tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85tensorboard"><span class="toc-text">安装tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SummaryWriter%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">SummaryWriter类的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-scalar-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_scalar()的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80tensorboard"><span class="toc-text">打开tensorboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-image-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">add_image()的使用</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -338,26 +339,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>本篇文章参考于<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hE411t7RN">PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】</a>,非常感谢土堆老师的教学</p>
+<li>
+<p>本篇文章参考于<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hE411t7RN">PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】</a>,非常感谢土堆老师的教学</p>
 </li>
-<li><p>学习资料链接链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9">https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9</a> 提取码: y2e9 </p>
+<li>
+<p>学习资料链接链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9">https://pan.baidu.com/s/1wGP1aZDA79ezQvqxEsGc7A?pwd=y2e9</a> 提取码: y2e9</p>
 </li>
-<li><p>注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptopk</p>
+<li>
+<p>注: 本篇文章安装环境为windows11 显卡为nvidia3070ti laptopk</p>
 </li>
 </ul>
-<h1 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h1><h2 id="dataset-1"><a href="#dataset-1" class="headerlink" title="dataset"></a>dataset</h2><ul>
+<h1>dataset</h1>
+<h2 id="dataset"><a class="header-anchor" href="#dataset">¶</a>dataset</h2>
+<ul>
 <li>dataset -&gt; 提供一种方式去获取数据及其label如图:</li>
 </ul>
 <p><img src="https://s2.loli.net/2024/02/14/bTzp6DXrxsvBPCU.png" alt="image-20240214144301297"></p>
 <ul>
-<li>dataset主要实现的功能有两个:<ol>
+<li>dataset主要实现的功能有两个:
+<ol>
 <li>获取每一个数据及其label</li>
 <li>获取数据的总数 -&gt; 只有知道了数据的总数,才能知道在训练的时候我们要训练多少次才能对数据进行反复迭代</li>
 </ol>
 </li>
 <li>使用pycharm导入<code>from torch.utils.data import Dataset</code> 我们可以进入看见dataset的官方文档解释</li>
 </ul>
-<pre><code class="python">class Dataset(Generic[T_co]):
+<pre><code class="language-python">class Dataset(Generic[T_co]):
     r&quot;&quot;&quot;An abstract class representing a :class:`Dataset`.
 
     All datasets that represent a map from keys to data samples should subclass
@@ -377,7 +384,7 @@
     def __getitem__(self, index) -&gt; T_co:
         raise NotImplementedError
 
-    def __add__(self, other: &#39;Dataset[T_co]&#39;) -&gt; &#39;ConcatDataset[T_co]&#39;:
+    def __add__(self, other: 'Dataset[T_co]') -&gt; 'ConcatDataset[T_co]':
         return ConcatDataset([self, other])
 
     # No `def __len__(self)` default?
@@ -394,17 +401,20 @@
 <blockquote>
 <ul>
 <li>所有的数据集都应该去继承这个类,</li>
-<li>所有的子类,都应该去重写<code>__getitem__</code> <ul>
+<li>所有的子类,都应该去重写<code>__getitem__</code>
+<ul>
 <li>这个方法主要是获取每一个数据及其label</li>
 </ul>
 </li>
-<li>我们同样可以选择去重写方法<code>__len__</code><ul>
+<li>我们同样可以选择去重写方法<code>__len__</code>
+<ul>
 <li>这个方法会返回数据集的长度</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="dataset实战"><a href="#dataset实战" class="headerlink" title="dataset实战"></a>dataset实战</h2><ul>
+<h2 id="dataset实战"><a class="header-anchor" href="#dataset实战">¶</a>dataset实战</h2>
+<ul>
 <li>本次实操将用到资料中的数据集</li>
 </ul>
 <p><img src="https://s2.loli.net/2024/02/14/hUWlond9AxOECF8.png" alt="image-20240214145848353"></p>
@@ -412,7 +422,7 @@
 <li>文件夹分为train和val,点开后里面分别有ant和bee -&gt; 在这之中的ant和bee就是它的label</li>
 <li>打开pycharm输入代码如下所示</li>
 </ul>
-<pre><code class="python">import os
+<pre><code class="language-python">import os
 
 from PIL.Image import Image
 from torch.utils.data import Dataset
@@ -440,18 +450,22 @@ class NewClass(Dataset):
 root_dir = &quot;dataset/train&quot;  # 数据集的相对路径
 ants_label_dir = &quot;ants&quot;
 ants_dataset = NewClass(root_dir=root_dir, label_dir=ants_label_dir)
+
 </code></pre>
 <ul>
 <li>上述代码中我们通过重写dataset, 获取到了ants数据集的信息如果想查询数据集中详细的数据的话,可以通过以下代码查询:</li>
 </ul>
-<pre><code class="python">img, label = ants_dataset[0]
+<pre><code class="language-python">img, label = ants_dataset[0]
 img.show()
 </code></pre>
 <ul>
 <li>还可以通过Ctrl+Enter组合键,查询python右边控制台的变量</li>
 </ul>
-<h1 id="Tensorboard"><a href="#Tensorboard" class="headerlink" title="Tensorboard"></a>Tensorboard</h1><h2 id="Tensorboard-1"><a href="#Tensorboard-1" class="headerlink" title="Tensorboard"></a>Tensorboard</h2><ul>
-<li>可以通过图表看到,在训练的过程中,数据的loss是如何变化的<ul>
+<h1>Tensorboard</h1>
+<h2 id="Tensorboard"><a class="header-anchor" href="#Tensorboard">¶</a>Tensorboard</h2>
+<ul>
+<li>可以通过图表看到,在训练的过程中,数据的loss是如何变化的
+<ul>
 <li>loss: 查看数据是否是以我们期望的方向进行训练的参数</li>
 </ul>
 </li>
@@ -461,15 +475,17 @@ img.show()
 <li>可以看到每一个input中,我们数据的形状,声音等等</li>
 </ul>
 <p><img src="https://s2.loli.net/2024/02/14/r9ejAgyXu3cNdTb.png" alt="image-20240214155810875"></p>
-<h2 id="安装tensorboard"><a href="#安装tensorboard" class="headerlink" title="安装tensorboard"></a>安装tensorboard</h2><pre><code class="shell">pip install tensorboard
+<h2 id="安装tensorboard"><a class="header-anchor" href="#安装tensorboard">¶</a>安装tensorboard</h2>
+<pre><code class="language-shell">pip install tensorboard
 </code></pre>
 <ul>
 <li><strong>注</strong>:安装前请注意anaconda的环境</li>
 </ul>
-<h2 id="SummaryWriter类的使用"><a href="#SummaryWriter类的使用" class="headerlink" title="SummaryWriter类的使用"></a>SummaryWriter类的使用</h2><ul>
+<h2 id="SummaryWriter类的使用"><a class="header-anchor" href="#SummaryWriter类的使用">¶</a>SummaryWriter类的使用</h2>
+<ul>
 <li>我们通过<code>from torch.utils.tensorboard import SummaryWriter</code> 查看SummaryWriter的官方文档如下</li>
 </ul>
-<pre><code class="python">class SummaryWriter(object):
+<pre><code class="language-python">class SummaryWriter(object):
     &quot;&quot;&quot;Writes entries directly to event files in the log_dir to be
     consumed by TensorBoard.
 
@@ -480,8 +496,8 @@ img.show()
     training.
     &quot;&quot;&quot;
 
-    def __init__(self, log_dir=None, comment=&#39;&#39;, purge_step=None, max_queue=10,
-                 flush_secs=120, filename_suffix=&#39;&#39;):
+    def __init__(self, log_dir=None, comment='', purge_step=None, max_queue=10,
+                 flush_secs=120, filename_suffix=''):
         &quot;&quot;&quot;Creates a `SummaryWriter` that will write out events and summaries
         to the event file.
 
@@ -489,7 +505,7 @@ img.show()
             log_dir (string): Save directory location. Default is
               runs/**CURRENT_DATETIME_HOSTNAME**, which changes after each run.
               Use hierarchical folder structure to compare
-              between runs easily. e.g. pass in &#39;runs/exp1&#39;, &#39;runs/exp2&#39;, etc.
+              between runs easily. e.g. pass in 'runs/exp1', 'runs/exp2', etc.
               for each new experiment to compare across them.
             comment (string): Comment log_dir suffix appended to the default
               ``log_dir``. If ``log_dir`` is assigned, this argument has no effect.
@@ -499,7 +515,7 @@ img.show()
               purged and hidden from TensorBoard.
               Note that crashed and resumed experiments should have the same ``log_dir``.
             max_queue (int): Size of the queue for pending events and
-              summaries before one of the &#39;add&#39; calls forces a flush to disk.
+              summaries before one of the 'add' calls forces a flush to disk.
               Default is ten items.
             flush_secs (int): How often, in seconds, to flush the
               pending events and summaries to disk. Default is every two minutes.
@@ -528,10 +544,11 @@ img.show()
 <ul>
 <li>直接使用SummaryWriter的话默认保存路径为<code>/runs/本机信息</code>我们也可以在括号中指定文件生成的路径,这些文件保存的是自己配置的训练数据的信息,生成后可以用tensorboard查看</li>
 </ul>
-<h2 id="add-scalar-的使用"><a href="#add-scalar-的使用" class="headerlink" title="add_scalar()的使用"></a>add_scalar()的使用</h2><ul>
+<h2 id="add-scalar-的使用"><a class="header-anchor" href="#add-scalar-的使用">¶</a>add_scalar()的使用</h2>
+<ul>
 <li>add_scalar官方文档如下</li>
 </ul>
-<pre><code class="python">    def add_scalar(
+<pre><code class="language-python">    def add_scalar(
         self,
         tag,
         scalar_value,
@@ -556,7 +573,7 @@ img.show()
             writer = SummaryWriter()
             x = range(100)
             for i in x:
-                writer.add_scalar(&#39;y=2x&#39;, i * 2, i)
+                writer.add_scalar('y=2x', i * 2, i)
             writer.close()
 
         Expected result:
@@ -572,7 +589,7 @@ img.show()
 <li>global_step 当前执行的步数</li>
 <li>add_scalar代码示例如下:</li>
 </ul>
-<pre><code class="python">from torch.utils.tensorboard import SummaryWriter
+<pre><code class="language-python">from torch.utils.tensorboard import SummaryWriter
 
 writer = SummaryWriter(&quot;logs&quot;)  # 将文件保存在logs文件夹下
 
@@ -581,18 +598,20 @@ for i in range(100):
 
 writer.close()
 </code></pre>
-<h2 id="打开tensorboard"><a href="#打开tensorboard" class="headerlink" title="打开tensorboard"></a>打开tensorboard</h2><pre><code class="shell">tensorboard --logdir=logs --port=6007
+<h2 id="打开tensorboard"><a class="header-anchor" href="#打开tensorboard">¶</a>打开tensorboard</h2>
+<pre><code class="language-shell">tensorboard --logdir=logs --port=6007
 </code></pre>
-<pre><code class="shell">tensorboard --logdir=#&#123;事件文件所在文件夹名&#125; --port=#&#123;端口&#125;
+<pre><code class="language-shell">tensorboard --logdir=#&#123;事件文件所在文件夹名&#125; --port=#&#123;端口&#125;
 </code></pre>
 <ul>
 <li>打开<a target="_blank" rel="noopener" href="http://localhost:6007/#timeseries">TensorBoard</a>可以看到我们刚才生成的数据</li>
 </ul>
 <p><img src="https://s2.loli.net/2024/02/14/as9Cb4rk7gGWOKp.png" alt="image-20240214163300365"></p>
-<h2 id="add-image-的使用"><a href="#add-image-的使用" class="headerlink" title="add_image()的使用"></a>add_image()的使用</h2><ul>
+<h2 id="add-image-的使用"><a class="header-anchor" href="#add-image-的使用">¶</a>add_image()的使用</h2>
+<ul>
 <li>add_image()官方文档如下:</li>
 </ul>
-<pre><code class="python">def add_image(self, tag, img_tensor, global_step=None, walltime=None, dataformats=&#39;CHW&#39;):
+<pre><code class="language-python">def add_image(self, tag, img_tensor, global_step=None, walltime=None, dataformats='CHW'):
     &quot;&quot;&quot;Add image data to summary.
 
     Note that this requires the ``pillow`` package.
@@ -622,10 +641,10 @@ writer.close()
         img_HWC[:, :, 1] = 1 - np.arange(0, 10000).reshape(100, 100) / 10000
 
         writer = SummaryWriter()
-        writer.add_image(&#39;my_image&#39;, img, 0)
+        writer.add_image('my_image', img, 0)
 
         # If you have non-default dimension setting, set the dataformats argument.
-        writer.add_image(&#39;my_image_HWC&#39;, img_HWC, 0, dataformats=&#39;HWC&#39;)
+        writer.add_image('my_image_HWC', img_HWC, 0, dataformats='HWC')
         writer.close()
 
     Expected result:
@@ -637,17 +656,17 @@ writer.close()
 </code></pre>
 <ul>
 <li>tag 标题</li>
-<li>img_tensor 图像 -&gt;要求数据类型(torch.Tensor, numpy.array, or string&#x2F;blobname)</li>
+<li>img_tensor 图像 -&gt;要求数据类型(torch.Tensor, numpy.array, or string/blobname)</li>
 <li>global_step 图像进行到的步数</li>
 <li>dataformats</li>
 </ul>
 <blockquote>
-<p>dataformats中的C &#x3D;&#x3D; Channel 通道,H &#x3D;&#x3D; Height 高度,W &#x3D;&#x3D; Width 宽度</p>
+<p>dataformats中的C == Channel 通道,H == Height 高度,W == Width 宽度</p>
 </blockquote>
 <ul>
 <li>add_image()示例代码如下</li>
 </ul>
-<pre><code class="python">import numpy as np
+<pre><code class="language-python">import numpy as np
 from PIL import Image
 from torch.utils.tensorboard import SummaryWriter
 
@@ -659,6 +678,7 @@ writer.add_image(tag=&quot;test&quot;, img_tensor=img_array, global_step=1, data
 # dataformats中的C == Channel 通道,H == Height 高度,W == Width 宽度
 # print(img_array.shap)可以查看它的格式 一般为3的就是通道
 writer.close()
+
 </code></pre>
 <ul>
 <li>打开tensorboard可以看到我们刚才加入的图片</li>
