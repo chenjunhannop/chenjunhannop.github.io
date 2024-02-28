@@ -2,28 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>2024-02-23-系统分析师软考(一) | nop blog</title>
+  <title>2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数 | nop blog</title>
   <meta name="keywords" content=" 系统分析师 ">
-  <meta name="description" content="2024-02-23-系统分析师软考(一) | nop blog">
+  <meta name="description" content="2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数 | nop blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024-02-23-系统分析师软考(一)">
+<meta property="og:title" content="2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数">
 <meta property="og:url" content="http://example.com/2024/02/23/2024-02-23-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="nop blog">
 <meta property="og:description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/z4TnZKlodY1u5Fy.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/Nu2zgxnMP9DLrj6.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/6hmCW1NJK8rPs3U.png">
-<meta property="og:image" content="c:/Users/chenJunHan/AppData/Roaming/Typora/typora-user-images/image-20240225173227184.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/FuUZALGfIoKclBx.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/5HfhQA734ypMuEn.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/dhFmoHiE9K2GRJq.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/LqCe6zBOuE5ncTX.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/yGZ6wJRbgQN9Uj2.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/UTVDpcKWviCxFzy.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/VcwoRJI6F8XyxN2.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/vAJH4GiDTpxzyXV.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/bacN5WwgCOQXi42.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/KqBekE5lzHwZJmf.png">
 <meta property="article:published_time" content="2024-02-23T09:42:00.000Z">
-<meta property="article:modified_time" content="2024-02-28T01:14:29.135Z">
+<meta property="article:modified_time" content="2024-02-28T15:19:51.887Z">
 <meta property="article:author" content="nop">
 <meta property="article:tag" content="系统分析师">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png">
+<meta name="twitter:image" content="https://s2.loli.net/2024/02/28/FuUZALGfIoKclBx.png">
 
 
 <link rel="icon" href="https://s2.loli.net/2024/02/18/WaBjZuhfvDeTKdS.png">
@@ -110,7 +115,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(4)</small>
+                <small>(5)</small>
             
         </div>
     </li>
@@ -137,7 +142,7 @@
         <div data-rel="软考">
             
             软考
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -158,7 +163,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
+<input type="hidden" id="yelog_site_posts_number" value="5">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -227,6 +232,15 @@
         </a>
         
         
+        <a id="top" class="全部文章 软考 "
+           href="/2024/02/23/2024-02-28-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%BA%8C)/"
+           data-tag="系统分析师"
+           data-author="" >
+            <span class="post-title" title="2024-02-23-系统分析师软考(二) - 校验码,指令,体系结构,流水线">2024-02-23-系统分析师软考(二) - 校验码,指令,体系结构,流水线</span>
+            <span class="post-date" title="2024-02-23 17:42:00">2024/02/23</span>
+        </a>
+        
+        
         <a id="top" class="全部文章 AI "
            href="/2024/02/14/2024-02-14-pytorch%E5%85%A5%E9%97%A8(%E4%BA%8C)/"
            data-tag="pytorch"
@@ -240,7 +254,7 @@
            href="/2024/02/23/2024-02-23-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%B8%80)/"
            data-tag="系统分析师"
            data-author="" >
-            <span class="post-title" title="2024-02-23-系统分析师软考(一)">2024-02-23-系统分析师软考(一)</span>
+            <span class="post-title" title="2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数">2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数</span>
             <span class="post-date" title="2024-02-23 17:42:00">2024/02/23</span>
         </a>
         
@@ -273,7 +287,7 @@
     <div class="pjax">
         <article id="post-2024-02-23-系统分析师软考(一)" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">2024-02-23-系统分析师软考(一)</h1>
+        <h1 class="article-title">2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数</h1>
     
     <div class="article-meta">
         
@@ -300,7 +314,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-02-28 09:14:29'>2024-02-23 17:42</time>
+            发布时间 : <time class="date" title='最后更新: 2024-02-28 23:19:51'>2024-02-23 17:42</time>
         
     </div>
     <div class="article-meta">
@@ -322,7 +336,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">考试介绍及备考攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E7%9B%B8%E5%85%B3%E6%83%85%E5%86%B5"><span class="toc-text">系统分析师相关情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="toc-text">软件开发方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="toc-text">其它软件开发方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">计算机组成与体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="toc-text">内容提要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E5%8F%8A%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-text">编码及浮点数运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flynn%E5%88%86%E7%B1%BB%E6%B3%95-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB"><span class="toc-text">Flynn分类法 - 计算机体系结构分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CISC%E4%B8%8ERISC"><span class="toc-text">CISC与RISC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="toc-text">流水线技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">流水线计算公式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">考试介绍及备考攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E7%9B%B8%E5%85%B3%E6%83%85%E5%86%B5"><span class="toc-text">系统分析师相关情况</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">计算机组成与结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90"><span class="toc-text">计算机硬件组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%8D%95%E5%85%83"><span class="toc-text">中央处理单元</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">数据表示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA"><span class="toc-text">数据表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#R%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-text">R进制转十进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACR%E8%BF%9B%E5%88%B6"><span class="toc-text">十进制转R进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#m%E8%BF%9B%E5%88%B6%E8%BD%ACn%E8%BF%9B%E5%88%B6"><span class="toc-text">m进制转n进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">计算机数的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81-%E7%A7%BB%E7%A0%81"><span class="toc-text">原码,反码,补码,移码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">浮点数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E9%94%99%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">数据表示错题分析</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -366,173 +380,158 @@
 </ul>
 <p><strong>注</strong>: 科目二, 科目三总时长210分钟(14:30  - 18:00) 考试经过了90分钟之后,科目二会自动交卷</p>
 </blockquote>
-<h2 id="软件开发方法"><a class="header-anchor" href="#软件开发方法">¶</a>软件开发方法</h2>
+<h1>计算机组成与结构</h1>
+<p><img src="https://s2.loli.net/2024/02/28/FuUZALGfIoKclBx.png" alt="image-20240228195811418"></p>
+<h2 id="计算机硬件组成"><a class="header-anchor" href="#计算机硬件组成">¶</a>计算机硬件组成</h2>
+<p><img src="https://s2.loli.net/2024/02/28/5HfhQA734ypMuEn.png" alt="image-20240228200311344"></p>
+<ul>
+<li>内部存储器<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+</ul>
+<h2 id="中央处理单元"><a class="header-anchor" href="#中央处理单元">¶</a>中央处理单元</h2>
+<p><img src="https://s2.loli.net/2024/02/28/dhFmoHiE9K2GRJq.png" alt="image-20240228200738372"></p>
+<ul>
+<li>控制器是cpu的核心</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/28/LqCe6zBOuE5ncTX.png" alt="image-20240228201047406"></p>
 <ul>
 <li>
-<p>结构化法 - c语言为主</p>
+<p>运算器</p>
 <ul>
-<li><strong>自顶向下</strong>, 逐步分解求精</li>
-<li>严格分阶段,阶段产出标准化应变能力差</li>
-</ul>
-</li>
-<li>
-<p>面向对象方法 - c++, java …</p>
-<ul>
-<li><strong>自底向上</strong></li>
-<li>阶段界限不明</li>
-<li>应变能力更强,更符合人们的思维习惯</li>
-</ul>
-</li>
-<li>
-<p>面向服务的方法 - 面向对象,但是封装的层级更高</p>
-<ul>
-<li>粗粒度,松耦合</li>
-<li><strong>标准化和构建化</strong></li>
-<li>抽象级别
-<ul>
-<li>操作 - 低级</li>
-<li>服务 - 中级</li>
-<li>业务流程 - 高级</li>
-</ul>
-</li>
+<li>算术逻辑单元 (arithmetic and logic unit)</li>
+<li>累加寄存器(Accumulator) - <strong>用于存储运算结果和源操作数</strong></li>
+<li>数据缓冲寄存器(Data Register)</li>
+<li>状态条件寄存器(Program Status Word)</li>
 </ul>
 </li>
 <li>
-<p>原型法:[需求阶段]</p>
+<p>控制器</p>
 <ul>
-<li>原型法独立于其它三个阶段,是独立的方法</li>
-<li><strong>针对需求不明确</strong></li>
-<li>按功能:
-<ul>
-<li>水平原型(界面)</li>
-<li>垂直原型(复杂算法)</li>
-</ul>
-</li>
-<li>按最终结果:
-<ul>
-<li>抛弃式原型</li>
-<li>演化式原型</li>
+<li>指令寄存器(Instruction Register) - 用于保存当前正在执行的一条指令</li>
+<li>程序计数器(Program Counter) - 指令的地址存在程序计数器中</li>
+<li>地址寄存器(Address Register)</li>
+<li>指令译码器(Instruction Decoder)</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="其它软件开发方法"><a class="header-anchor" href="#其它软件开发方法">¶</a>其它软件开发方法</h3>
+<blockquote>
+<p>注: 注意寄存器等称呼,可以根据寄存器的容量判断其作用,比如指令寄存器是保存当前正在执行的指令而不是所有指令</p>
+</blockquote>
+<h1>数据表示</h1>
+<h2 id="数据表示"><a class="header-anchor" href="#数据表示">¶</a>数据表示</h2>
+<p><img src="https://s2.loli.net/2024/02/28/yGZ6wJRbgQN9Uj2.png" alt="image-20240228203401090"></p>
 <ul>
-<li>形式化方法 - 形式化是以数学模型为基础的</li>
+<li>以H结尾的也是16进制</li>
 </ul>
-<p><img src="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png" alt="image-20240224104104931"></p>
+<h2 id="R进制转十进制"><a class="header-anchor" href="#R进制转十进制">¶</a>R进制转十进制</h2>
+<p>eg: 例如有6进制数5043: R = 6<br>
+$$<br>
+5043 = 3<em>6^0 + 4</em>6^1 + 0 * 6^2 + 5*6^3 = 1107<br>
+$$</p>
 <ul>
-<li>统一过程方法[UP]</li>
-<li>敏捷方法</li>
+<li>用R进制的每一位乘以R的n次方,从整数最低位开始,依次0,1,2,3…累加</li>
 </ul>
-<h1>计算机组成与体系结构</h1>
-<h2 id="内容提要"><a class="header-anchor" href="#内容提要">¶</a>内容提要</h2>
+<h2 id="十进制转R进制"><a class="header-anchor" href="#十进制转R进制">¶</a>十进制转R进制</h2>
 <ul>
-<li>知识点重要程度如下图所示:</li>
+<li>十进制整数(除以R倒取余数)</li>
 </ul>
-<img src="https://s2.loli.net/2024/02/24/z4TnZKlodY1u5Fy.png" alt="image-20240224104918679" style="zoom: 33%;" />
-<h2 id="编码及浮点数运算"><a class="header-anchor" href="#编码及浮点数运算">¶</a>编码及浮点数运算</h2>
+<p>eg: 十进制200,转换6进制, R = 6</p>
+<pre><code class="language-tex">200/6 = 33 ... 2
+33/6  = 5  ... 3
+5/6   = 0  ... 5
+
+200 -&gt; 532
+</code></pre>
+<h2 id="m进制转n进制"><a class="header-anchor" href="#m进制转n进制">¶</a>m进制转n进制</h2>
 <ul>
-<li>
-<p>浮点数表示<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<ul>
-<li>$$<br>
-N = 尾数 * 基数^{指数(阶码)}<br>
-$$</li>
+<li>一般来说是将m进制转化为十进制再转换为n进制,但是有两种情况是特例</li>
 </ul>
-</li>
-<li>
-<p>运算过程:</p>
-</li>
-<li>
-<p>对阶<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> &gt; 尾数计算<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> &gt; 结果格式化<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
-</li>
-<li>
-<p>特点:</p>
 <ol>
-<li>一般尾数用补码<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>,阶码<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>用移码<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></li>
-<li>阶码的位数决定数的表示范围, 位数越多范围越大</li>
-<li>尾数的位数决定书的有效精度,位数越多精度越高</li>
-<li>对阶时,小数向大数看齐</li>
-<li>对阶是通过较小数的尾数右移实现的</li>
+<li>二进制转八进制:
+<ol>
+<li>每三位二进制数转换为一位八进制数</li>
 </ol>
 </li>
+</ol>
+<p>eg:</p>
+<pre><code class="language-text">二进制: 01101 -&gt; 001 101 -&gt; 001 = 1, 101 = 1 + 4 = 5 -&gt; 八进制: 15 
+</code></pre>
+<ol start="2">
+<li>二进制转十六进制
+<ol>
+<li>每四位二进制转换为一位十六进制数</li>
+</ol>
+</li>
+</ol>
+<p>eg:</p>
+<pre><code class="language-text">二进制: 101101 -&gt; 0010, 1101 -&gt; 0010 = 2, 1101 = 8 + 4 + 1 = 13 -&gt; 十六进制: 2D
+</code></pre>
+<h2 id="计算机数的概念"><a class="header-anchor" href="#计算机数的概念">¶</a>计算机数的概念</h2>
+<p><img src="https://s2.loli.net/2024/02/28/UTVDpcKWviCxFzy.png" alt="image-20240228205536850"></p>
+<ul>
+<li>正数的符号数为0</li>
+<li>负数的符号数为1</li>
+<li>真值 : 机器数对应的实际数值 -&gt; 十进制</li>
 </ul>
-<h2 id="Flynn分类法-计算机体系结构分类"><a class="header-anchor" href="#Flynn分类法-计算机体系结构分类">¶</a>Flynn分类法 - 计算机体系结构分类</h2>
-<p><img src="https://s2.loli.net/2024/02/24/Nu2zgxnMP9DLrj6.png" alt="image-20240224155700240"></p>
-<pre><code class="language-text">S: Single 		单个   
-M: Multiple		多个
-I: Instruction  指令
-D: Data			数据
+<h2 id="原码-反码-补码-移码"><a class="header-anchor" href="#原码-反码-补码-移码">¶</a>原码,反码,补码,移码</h2>
+<p><img src="https://s2.loli.net/2024/02/28/VcwoRJI6F8XyxN2.png" alt="image-20240228215232242"></p>
+<p>取值范围:<img src="https://s2.loli.net/2024/02/28/vAJH4GiDTpxzyXV.png" alt="image-20240228215933649"></p>
+<ul>
+<li>不理解计算公式的话可以用特殊值法来计算</li>
+</ul>
+<pre><code class="language-text">假设n = 3
+一个位是符号位
+这个数的原码范围可以为
+00 01 10 11 一共有4个反码同理.
+但是补码和移码中 
++0 = -0 = 00000
+所以可以多表示一位负数出来
 </code></pre>
 <ul>
-<li><strong>注</strong>: 注意区分大规模并行处理器MPP为MIMD,而并行处理机为SIMD</li>
+<li>
+<p>小数就是整数除了</p>
+</li>
+<li>
+<p>$$<br>
+2^{n-1}<br>
+$$</p>
+</li>
 </ul>
-<h2 id="CISC与RISC"><a class="header-anchor" href="#CISC与RISC">¶</a>CISC与RISC</h2>
-<table>
-<thead>
-<tr>
-<th>指令系统类型</th>
-<th style="text-align:left">指令</th>
-<th>寻址方式</th>
-<th>实现方式</th>
-<th>其它</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CISC(复杂)</td>
-<td style="text-align:left">数量多,使用频率差别大,可变长格式</td>
-<td>支持多种</td>
-<td>微程序控制技术(微码)<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></td>
-<td>研制周期长</td>
-</tr>
-<tr>
-<td>RISC(精简)</td>
-<td style="text-align:left">数量少,使用频率接近 ,定长格式,大部分为单周期指令,操作寄存器,只有Load/Store操作内存</td>
-<td>支持方式少</td>
-<td>增加了通用寄存器;硬布线逻辑控制为主;适合采用流水线</td>
-<td>优化编译,有效支持高级语言</td>
-</tr>
-</tbody>
-</table>
+<h1>浮点数</h1>
+<p><img src="https://s2.loli.net/2024/02/28/bacN5WwgCOQXi42.png" alt="image-20240228223523194"><br>
+$$<br>
+N = F*2^E<br>
+$$</p>
 <ul>
-<li>复杂指令计算机(CISC, Complex Instruction Set Computers)<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup></li>
-<li>精简指令计算机(RISC, Reduced Instruction Set Computers)</li>
+<li>
+<p>E为阶码 -&gt; 带符号的纯整数,</p>
+</li>
+<li>
+<p>F为尾数 -&gt; 带符号的纯小数</p>
+</li>
+<li>
+<p>类似于十进制的科学计数法</p>
+</li>
+<li>
+<p>浮点数所能表示的数值范围由阶码确定,所表示的数值精度由尾数确定</p>
+</li>
 </ul>
-<h2 id="流水线技术"><a class="header-anchor" href="#流水线技术">¶</a>流水线技术</h2>
-<ul>
-<li>相关参数计算: 流水线执行时间计算, 流水线吞吐率, 流水线加速比</li>
-<li>流水线是指在程序执行时多条指令重叠进行操作的一种<strong>准并行处理实现技术</strong>. 各种部件同时处理是针对不同指令而言的,它们可同时为多条指令的不同部分进行工作,以提高部件的利用率和指令的平均执行速度</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/02/24/6hmCW1NJK8rPs3U.png" alt="image-20240224164115575"></p>
-<h3 id="流水线计算公式"><a class="header-anchor" href="#流水线计算公式">¶</a>流水线计算公式</h3>
-<img src="C:/Users/chenJunHan/AppData/Roaming/Typora/typora-user-images/image-20240225173227184.png" alt="image-20240225173227184" style="zoom:33%;" />
-<ul>
-<li>流水线周期为执行时间最长的一段</li>
-<li>流水线计算公式为</li>
-</ul>
+<h2 id="数据表示错题分析"><a class="header-anchor" href="#数据表示错题分析">¶</a>数据表示错题分析</h2>
+<p><img src="https://s2.loli.net/2024/02/28/KqBekE5lzHwZJmf.png" alt="image-20240228225848498"></p>
+<pre><code class="language-text">阶码用移码表示 -&gt; 阶码一定为整数    
+尾数用补码表示 -&gt; 尾数使用小数表示的
+浮点数 = 尾数*2^阶码
+  
+  
+尾数的范围: -1 ~ 1 - 2^`(9 - 1)     9 = 数符1位,尾数8位
+阶符的范围: -2^6 ~ 2^6 -1 = -64 ~ 63
+因为正负都是乘以阶码的最高阶才能达到最高值
+所以范围为
+-2^63 ~ (1 - 2^8)* 2^63
+</code></pre>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>二进制中所有的基数固定为2,浮点数的表示有点类似于科学计数法 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>使要计算的浮点数的阶码相等 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>一旦两个操作数的指数对齐,就可以对两个尾数(也称为有效数字)执行加、减、乘或除等算术运算。根据运算的类型,对应的规则会应用于尾数。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>了解到有这个过程就行了,这里不做考察 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p>补码(Two’s Complement): 补码主要用于表示有符号整数。对于一个N位二进制数,如果它是正数,那它本身就是该数的补码表示;如果它是负数,那么它的补码是其绝对值的反码加1。使用补码可以使加法和减法运算同构。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p>在这指的是指数 <a href="#fnref6" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn7" class="footnote-item"><p>移码(Excess-K Code): 移码也是表示浮点数指数部分的一种码制,但与阶码不同。移码是将真实指数值加上一个常数K(通常为2^(n-1)-1,其中n是指数位数)。这种编码方式的优点是,移码的最高有效位总是1,便于判断指数的正负号。 <a href="#fnref7" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn8" class="footnote-item"><p>可以理解为底层机械编程语言的一种 <a href="#fnref8" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn9" class="footnote-item"><p>主要应用与x86计算机 <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>内存 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

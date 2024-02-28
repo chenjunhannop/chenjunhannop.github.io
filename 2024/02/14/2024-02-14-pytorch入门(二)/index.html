@@ -8,22 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024-02-23-系统分析师软考(一)">
+<meta property="og:title" content="2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数">
 <meta property="og:url" content="http://example.com/2024/02/23/2024-02-23-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="nop blog">
 <meta property="og:description" content="考试介绍及备考攻略 ¶系统分析师相关情况  考试形式:机考 考试科目:   科目一 : 综合知识 [总分: 75分]   总时长150分钟(8:30 - 11:00)   客观题: 75空单选   科目二:案例分析[总分:75分]  1道必答题+4选2 选答只记录做了的前两道题  科目三:论文写作[总分:75分]  论问题:四选一 论文要求字数 2000  - 2500 字  注: 科目二, 科目">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/z4TnZKlodY1u5Fy.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/Nu2zgxnMP9DLrj6.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/24/6hmCW1NJK8rPs3U.png">
-<meta property="og:image" content="c:/Users/chenJunHan/AppData/Roaming/Typora/typora-user-images/image-20240225173227184.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/FuUZALGfIoKclBx.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/5HfhQA734ypMuEn.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/dhFmoHiE9K2GRJq.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/LqCe6zBOuE5ncTX.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/yGZ6wJRbgQN9Uj2.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/UTVDpcKWviCxFzy.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/VcwoRJI6F8XyxN2.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/vAJH4GiDTpxzyXV.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/bacN5WwgCOQXi42.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/28/KqBekE5lzHwZJmf.png">
 <meta property="article:published_time" content="2024-02-23T09:42:00.000Z">
-<meta property="article:modified_time" content="2024-02-28T01:14:29.135Z">
+<meta property="article:modified_time" content="2024-02-28T15:19:51.887Z">
 <meta property="article:author" content="nop">
 <meta property="article:tag" content="系统分析师">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2024/02/24/Bsn15VvyTfoMWlj.png">
+<meta name="twitter:image" content="https://s2.loli.net/2024/02/28/FuUZALGfIoKclBx.png">
 
 
 <link rel="icon" href="https://s2.loli.net/2024/02/18/WaBjZuhfvDeTKdS.png">
@@ -110,7 +115,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(4)</small>
+                <small>(5)</small>
             
         </div>
     </li>
@@ -137,7 +142,7 @@
         <div data-rel="软考">
             
             软考
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -158,7 +163,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
+<input type="hidden" id="yelog_site_posts_number" value="5">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -227,6 +232,15 @@
         </a>
         
         
+        <a id="top" class="全部文章 软考 "
+           href="/2024/02/23/2024-02-28-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%BA%8C)/"
+           data-tag="系统分析师"
+           data-author="" >
+            <span class="post-title" title="2024-02-23-系统分析师软考(二) - 校验码,指令,体系结构,流水线">2024-02-23-系统分析师软考(二) - 校验码,指令,体系结构,流水线</span>
+            <span class="post-date" title="2024-02-23 17:42:00">2024/02/23</span>
+        </a>
+        
+        
         <a id="top" class="全部文章 AI "
            href="/2024/02/14/2024-02-14-pytorch%E5%85%A5%E9%97%A8(%E4%BA%8C)/"
            data-tag="pytorch"
@@ -240,7 +254,7 @@
            href="/2024/02/23/2024-02-23-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B8%88%E8%BD%AF%E8%80%83(%E4%B8%80)/"
            data-tag="系统分析师"
            data-author="" >
-            <span class="post-title" title="2024-02-23-系统分析师软考(一)">2024-02-23-系统分析师软考(一)</span>
+            <span class="post-title" title="2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数">2024-02-23-系统分析师软考(一) - 硬件组成,cpu,编码,浮点数</span>
             <span class="post-date" title="2024-02-23 17:42:00">2024/02/23</span>
         </a>
         
